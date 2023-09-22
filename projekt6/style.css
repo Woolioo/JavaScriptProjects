@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+    background-color: #0585ed;
+}
+
+.box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 600px;
+	min-height: 200px;
+	padding: 30px;
+	border-radius: 8px;
+	background-color: #fff;
+}
+
+.fun-fact {
+    margin-top: 20px;
+}
