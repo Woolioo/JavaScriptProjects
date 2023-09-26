@@ -1,0 +1,21 @@
+html {
+	background-color: rgb(70, 139, 156);
+	color: white;
+}
+
+.btn-group {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+button {
+	padding: 10px;
+	margin: 10px;
+	font-size: 20px;
+	background-color: rgb(101, 179, 199);
+	color: white;
+	border: solid white;
+	border-radius: 10px;
+}
