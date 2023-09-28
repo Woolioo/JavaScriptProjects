@@ -8,7 +8,8 @@
 	"watchOptions": {
 		"watchFile": "useFsEvents",
 		"watchDirectory": "useFsEvents",
-		"fallbackPolling": "dynamicPriority"
+		"fallbackPolling": "dynamicPriority",
+		"synchronousWatchDirectory": true,
 	}
 }
 

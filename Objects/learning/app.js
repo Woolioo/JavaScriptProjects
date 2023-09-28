@@ -37,3 +37,20 @@ User.prototype.hello = function () {
 };
 nextUser.hello();
 nextUser2.hello();
+
+const ob = { 
+	number: 123,
+	showNumber () {
+		console.log(this.number);
+	},
+	showNmber2 () { 
+		const test = () => { 
+			console.log(this.number);
+			console.log(this);
+		}
+		test()
+	}
+}
+
+ob.showNumber()
+ob.showNmber2()
