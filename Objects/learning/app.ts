@@ -68,3 +68,29 @@ const ob = {
 
 ob.showNumber()
 ob.showNmber2()
+
+function test () { 
+	console.log(this);
+	console.log(this.name);
+}
+
+const car1 = {
+	name: 'Dodge',
+}
+
+test.bind(car1)()
+
+const movie = { 
+	title: `Star Wars`
+}
+
+function showMovie(price, cinema) { 
+	console.log(`Film ${this.title}, cena ${price}, kino ${cinema}.`);
+}
+
+// funkcja.call (obiekt, argumenty)
+showMovie.call(movie, 50, 'Multikino')
+
+//funkcja.apply(obiekt, tablica)
+const movieInfo = [40, 'Helios']
+showMovie.apply(movie,movieInfo)

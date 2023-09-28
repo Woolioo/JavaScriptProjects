@@ -1,57 +1,78 @@
 const newUser = {
-	name: 'Micky',
-	age: 20,
-	car: {
-		brand: 'BMW',
-		model: 'M3',
-		color: 'black',
-		sound() {
-			console.log(`wrrrrum`)
-		},
-	},
-}
-newUser['country'] = 'Poland'
-newUser['fav-food'] = 'kebab'
-const catName = 'Luna'
-const catAge = '5'
+    //basic object
+    name: 'Micky',
+    age: 20,
+    car: {
+        brand: 'BMW',
+        model: 'M3',
+        color: 'black',
+        sound() {
+            console.log(`wrrrrum`);
+        },
+    },
+};
+newUser['country'] = 'Poland';
+newUser['fav-food'] = 'kebab';
+const catName = 'Luna';
+const catAge = '5';
 const cat = {
-	catName,
-	catAge,
-}
-console.log(newUser)
-newUser.car.sound()
-console.log(cat)
+    // using names of variables istead of key and value
+    catName,
+    catAge,
+};
+console.log(newUser);
+newUser.car.sound();
+console.log(cat);
 for (const data in newUser) {
-	//for in
-	console.log(data + ': ' + newUser[data])
+    //for in
+    console.log(data + ': ' + newUser[data]);
 }
 function User(name, age) {
-	this.name = name
-	this.age = age
+    //consturctor
+    this.name = name;
+    this.age = age;
 }
-const nextUser = new User('Klaudia', 23) //used of 'new'
-const nextUser2 = new User('Kasia', 24)
-console.log(nextUser)
-console.log(nextUser2)
+const nextUser = new User('Klaudia', 23); //used of 'new'
+const nextUser2 = new User('Kasia', 24);
+console.log(nextUser);
+console.log(nextUser2);
 User.prototype.hello = function () {
-	console.log(`Cześć ${this.name}`)
-}
-nextUser.hello()
-nextUser2.hello()
-
+    //prototype
+    console.log(`Cześć ${this.name}`);
+};
+nextUser.hello();
+nextUser2.hello();
 const ob = {
-	number: 123,
-	showNumber() {
-		console.log(this.number)
-	},
-	showNmber2() {
-		const test = () => {
-			console.log(this.number)
-			console.log(this)
-		}
-		test()
-	},
+    number: 123,
+    showNumber() {
+        console.log(this.number);
+    },
+    showNmber2() {
+        const test = () => {
+            console.log(this.number);
+            console.log(this);
+        };
+        test();
+    },
+};
+ob.showNumber();
+ob.showNmber2();
+function test() {
+    console.log(this);
+    console.log(this.name);
 }
-
-ob.showNumber()
-ob.showNmber2()
+const car1 = {
+    name: 'Dodge',
+};
+test.bind(car1)();
+const movie = {
+    title: `Star Wars`
+};
+function showMovie(price, cinema) {
+    console.log(`Film ${this.title}, cena ${price}, kino ${cinema}.`);
+}
+// funkcja.call (obiekt, argumenty)
+showMovie.call(movie, 50, 'Multikino');
+//funkcja.apply(obiekt, tablica)
+const movieInfo = [40, 'Helios'];
+showMovie.apply(movie, movieInfo);
