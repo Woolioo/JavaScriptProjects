@@ -69,9 +69,9 @@ const ob = {
 ob.showNumber()
 ob.showNmber2()
 
-function test () { 
-	console.log(this);
-	console.log(this.name);
+function test() {
+	console.log(this)
+	console.log(this.name)
 }
 
 const car1 = {
@@ -80,12 +80,12 @@ const car1 = {
 
 test.bind(car1)()
 
-const movie = { 
-	title: `Star Wars`
+const movie = {
+	title: `Star Wars`,
 }
 
-function showMovie(price, cinema) { 
-	console.log(`Film ${this.title}, cena ${price}, kino ${cinema}.`);
+function showMovie(price, cinema) {
+	console.log(`Film ${this.title}, cena ${price}, kino ${cinema}.`)
 }
 
 // funkcja.call (obiekt, argumenty)
@@ -93,4 +93,26 @@ showMovie.call(movie, 50, 'Multikino')
 
 //funkcja.apply(obiekt, tablica)
 const movieInfo = [40, 'Helios']
-showMovie.apply(movie,movieInfo)
+showMovie.apply(movie, movieInfo)
+
+//class
+
+class People {
+	surname: any
+	adress: any
+	constructor(surname, adress) {
+		this.surname = surname; 
+		this.adress = adress;
+	}
+
+	sayHi() {
+		console.log(`Witaj ${this.surname}`);
+	}
+	showAdress(){
+		console.log(`Twoj adres to ${this.adress}`);
+	}
+}
+
+const people2 = new People('Mickey', 'Ogrodowa')
+console.log(people2);
+people2.sayHi()
