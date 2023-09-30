@@ -94,3 +94,48 @@ class People {
 const people2 = new People('Mickey', 'Ogrodowa');
 console.log(people2);
 people2.sayHi();
+class Animal {
+    petName;
+    constructor(petName) {
+        this.petName = petName;
+    }
+    sound() {
+        console.log(`Zwierzak robi hau hau`);
+    }
+}
+class Dog extends Animal {
+    petAge;
+    constructor(petName, petAge) {
+        super(petName); //wywołanie konstruktora klasy nadrzędnej i przekazanie parametru
+        this.petAge = petAge;
+    }
+}
+class Cat extends Animal {
+    sound() {
+        console.log(`Zwierzak robi miau miau`);
+    }
+}
+const dog = new Dog('Tofik', 7);
+const kot = new Cat('Luna');
+console.log(dog);
+console.log(kot);
+kot.sound();
+dog.sound();
+// destrukturyzacji obiektów
+const personInfo = {
+    name: 'Jan',
+    surname: 'Kowalski',
+    age: 30,
+    car: {
+        brand: 'BMW',
+        model: 'X5',
+    },
+};
+const showPersonInfo = ({ name: firstName, surname, age }) => {
+    console.log(`${firstName} ${surname} ma ${age} lat.`);
+};
+const showPersonInfo2 = ({ car: { brand, model } }) => {
+    console.log(`Jego furka to ${brand} ${model}`);
+};
+showPersonInfo(personInfo);
+showPersonInfo2(personInfo);
